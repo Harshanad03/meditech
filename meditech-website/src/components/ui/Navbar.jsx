@@ -26,22 +26,9 @@ const Navbar = () => {
       isScrolled 
         ? 'bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-700 shadow-xl' 
         : 'bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-700'
-    }`}>
-      {/* Curved bottom edge using SVG */}
-      <div className="absolute bottom-0 left-0 w-full h-8">
-        <svg
-          className="w-full h-full"
-          viewBox="0 0 1200 32"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 0 L1200 0 Q1200 16 600 32 Q0 16 0 0 Z"
-            fill="currentColor"
-            className="text-white"
-          />
-        </svg>
-      </div>
+    }`} style={{
+      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 85% 100%, 70% 85%, 50% 100%, 30% 85%, 15% 100%, 0 85%)'
+    }}>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="flex justify-between items-center h-20">

@@ -130,27 +130,6 @@ const WhyChooseUs = () => {
             <div className="text-neutral-600">Satisfaction Rate</div>
           </div>
         </div>
-
-        {/* CTA Section */}
-        <div className={`text-center bg-gradient-to-r from-primary-50 to-secondary-50 rounded-3xl p-12 transition-all duration-1000 delay-1400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <h3 className="text-3xl font-bold text-neutral-800 mb-6">
-            Ready to Get Started?
-          </h3>
-          <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
-            Join thousands of healthcare professionals who trust Meditech Solution 
-            for their medical equipment needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary text-lg px-8 py-4">
-              Get Free Quote
-            </button>
-            <button className="btn-secondary text-lg px-8 py-4">
-              Schedule Demo
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -154,57 +154,6 @@ const CustomerReviews = () => {
             />
           ))}
         </div>
-
-        {/* All Reviews Grid */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 transition-all duration-1000 delay-800 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          {reviews.map((review, index) => (
-            <div
-              key={review.id}
-              className="bg-neutral-50 p-8 rounded-2xl border border-neutral-100 hover:border-primary-200 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg"
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="flex items-center mb-6">
-                <div className="text-4xl mr-4">{review.image}</div>
-                <div>
-                  <h4 className="font-bold text-neutral-800">{review.name}</h4>
-                  <p className="text-primary-600 text-sm">{review.role}</p>
-                  <p className="text-neutral-500 text-sm">{review.hospital}</p>
-                </div>
-              </div>
-              
-              <div className="flex mb-4">
-                {renderStars(review.rating)}
-              </div>
-              
-              <blockquote className="text-neutral-700 italic leading-relaxed">
-                "{review.comment}"
-              </blockquote>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className={`text-center mt-16 transition-all duration-1000 delay-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <h3 className="text-2xl font-bold text-neutral-800 mb-6">
-            Join Our Satisfied Customers
-          </h3>
-          <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
-            Experience the Meditech Solution difference. Get in touch with us today 
-            to discuss your medical equipment needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary text-lg px-8 py-4">
-              Get Started Today
-            </button>
-            <button className="btn-secondary text-lg px-8 py-4">
-              View More Reviews
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );

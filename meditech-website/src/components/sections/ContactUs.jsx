@@ -263,49 +263,6 @@ const ContactUs = () => {
                 </div>
               ))}
             </div>
-
-            {/* Quick Contact CTA */}
-            <div className="mt-8 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 text-white text-center">
-              <div className="text-4xl mb-4 animate-heartbeat">🚀</div>
-              <h4 className="text-xl font-bold mb-4">
-                Need Immediate Assistance?
-              </h4>
-              <p className="text-primary-100 mb-6">
-                Our technical support team is available 24/7 to help you with any urgent needs.
-              </p>
-              <button className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                Emergency Contact
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Map Section */}
-        <div className={`mt-20 transition-all duration-1000 delay-600 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="bg-neutral-100 rounded-3xl p-8 text-center">
-            <div className="text-6xl mb-6 animate-float">🗺️</div>
-            <h3 className="text-2xl font-bold text-neutral-800 mb-4">
-              Global Presence
-            </h3>
-            <p className="text-neutral-600 mb-6">
-              We have offices and service centers in major cities around the world to serve you better.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-2xl">
-                <div className="text-2xl font-bold text-primary-600 mb-2">North America</div>
-                <p className="text-neutral-600">New York, Los Angeles, Toronto</p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl">
-                <div className="text-2xl font-bold text-secondary-500 mb-2">Europe</div>
-                <p className="text-neutral-600">London, Berlin, Paris</p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl">
-                <div className="text-2xl font-bold text-accent-500 mb-2">Asia Pacific</div>
-                <p className="text-neutral-600">Tokyo, Sydney, Singapore</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

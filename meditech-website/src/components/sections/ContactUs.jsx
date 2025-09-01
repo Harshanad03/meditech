@@ -86,11 +86,13 @@ const ContactUs = () => {
     'Ventilator',
     'Patient Monitor',
     'ECG Machine',
-    'OT Light & Table',
+    'OT Light',
+    'OT Table',
     'Diathermy',
     'Boyles Apparatus',
     'ICU Cot',
-    'CPAP/BiPAP',
+    'CPAP',
+    'BiPAP',
     'O2 Concentrator',
     'Other'
   ];

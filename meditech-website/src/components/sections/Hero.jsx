@@ -36,9 +36,6 @@ const Hero = () => {
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 pt-32">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Simple Animated Circle */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-200/30 rounded-full animate-float shadow-lg"></div>
-        
         {/* All Medical Icons in Translucent Circles */}
         {/* Top-left Syringe Circle */}
         <div className="absolute top-20 left-20 w-28 h-28 bg-blue-200/40 rounded-full animate-float flex items-center justify-center shadow-lg">
@@ -66,14 +63,14 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+              {/* Main Content */}
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         {/* Main Heading */}
         <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <span className="block bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent animate-gradient-x">
+          <span className="block bg-gradient-to-r from-teal-900 via-cyan-900 to-blue-900 bg-clip-text text-transparent animate-gradient-x hover:scale-105 transition-transform duration-300 cursor-default animate-pulse hover:from-teal-700 hover:via-cyan-800 hover:to-blue-700 transition-all duration-500 hover:drop-shadow-2xl hover:drop-shadow-teal-500/50">
             Medical Equipment
           </span>
-          <span className="block text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-teal-700 via-cyan-700 to-blue-700 bg-clip-text text-transparent animate-gradient-x-delayed">
+          <span className="block text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-teal-900 via-cyan-900 to-blue-900 bg-clip-text text-transparent animate-gradient-x-delayed hover:scale-105 transition-transform duration-300 cursor-default mt-2 animate-pulse hover:from-teal-700 hover:via-cyan-700 hover:to-blue-700 transition-all duration-500 hover:drop-shadow-2xl hover:drop-shadow-blue-500/50">
             For Sale, Service & Rental
           </span>
         </h1>
@@ -81,7 +78,7 @@ const Hero = () => {
         {/* Dynamic Subtitle */}
         <div className={`h-16 mb-8 flex items-center justify-center transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <p className="text-xl sm:text-2xl lg:text-2xl text-gray-700 font-medium">
-            <span className="inline-block min-w-[400px] text-left">
+            <span className="inline-block min-w-[300px] sm:min-w-[400px] text-center">
               {heroTexts[currentText]}
             </span>
           </p>
@@ -89,7 +86,7 @@ const Hero = () => {
 
         {/* Stats Section */}
         <div className={`max-w-6xl mx-auto mb-10 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
             {[
               { number: "500+", label: "Hospitals Served", icon: "🏥", color: "from-teal-500 to-cyan-600" },
               { number: "250+", label: "Happy Clients", icon: "😊", color: "from-teal-600 to-cyan-700" },
@@ -100,7 +97,7 @@ const Hero = () => {
                 {/* Stats Circle - Same Style as Background Circle */}
                 <div className="w-36 h-36 bg-blue-200/30 rounded-full animate-float shadow-lg flex flex-col items-center justify-center group-hover:scale-105 transition-transform duration-300">
                   {/* Icon */}
-                  <div className="text-xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
                     {stat.icon}
                   </div>
                   
@@ -110,7 +107,7 @@ const Hero = () => {
                   </div>
                   
                   {/* Label */}
-                  <div className="text-gray-700 text-xs font-semibold group-hover:text-gray-800 transition-colors duration-300 uppercase tracking-wide text-center px-2">
+                  <div className="text-gray-700 text-[10px] font-semibold group-hover:text-gray-800 transition-colors duration-300 uppercase tracking-wide text-center px-2">
                     {stat.label}
                   </div>
                 </div>
@@ -120,7 +117,7 @@ const Hero = () => {
         </div>
 
         {/* Description */}
-        <p className={`text-lg sm:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed transform transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <p className={`text-lg sm:text-xl mb-10 max-w-3xl mx-auto leading-relaxed transform transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{color: '#006666'}}>
           Your trusted partner for cutting-edge medical equipment solutions. We provide premium quality devices, 
           expert maintenance services, and flexible rental options to meet all your healthcare needs.
         </p>
@@ -149,8 +146,6 @@ const Hero = () => {
         <div className="absolute top-1/3 left-20 text-5xl opacity-30 animate-float-slow filter drop-shadow-lg">💉</div>
         <div className="absolute bottom-1/3 right-20 text-4xl opacity-30 animate-float filter drop-shadow-lg">🩺</div>
         <div className="absolute bottom-1/4 left-10 text-5xl opacity-30 animate-float-delayed filter drop-shadow-lg">🏥</div>
-        <div className="absolute top-1/2 left-1/3 text-4xl opacity-25 animate-float-slow filter drop-shadow-lg">⚡</div>
-        <div className="absolute bottom-1/3 left-1/2 text-5xl opacity-25 animate-float filter drop-shadow-lg">🔬</div>
       </div>
 
       {/* Mouse Follow Effect */}

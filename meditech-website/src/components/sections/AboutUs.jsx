@@ -63,10 +63,7 @@ const AboutUs = () => {
                 <div className="w-2 h-2 bg-primary-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-neutral-700">ISO 13485 certified quality management system</p>
               </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-neutral-700">FDA and CE approved equipment standards</p>
-              </div>
+
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-neutral-700">24/7 technical support and maintenance services</p>

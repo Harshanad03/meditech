@@ -110,7 +110,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Stats Section */}
-        <div className={`grid grid-cols-1 md:grid-cols-4 gap-8 mb-16 transition-all duration-1000 delay-1200 ${
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 transition-all duration-1000 delay-1200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center">
@@ -118,15 +118,11 @@ const WhyChooseUs = () => {
             <div className="text-neutral-600">Years Experience</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-secondary-500 mb-2">1000+</div>
+            <div className="text-4xl font-bold text-secondary-500 mb-2">250+</div>
             <div className="text-neutral-600">Happy Clients</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-accent-500 mb-2">50+</div>
-            <div className="text-neutral-600">Countries Served</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-primary-600 mb-2">99.9%</div>
+            <div className="text-4xl font-bold text-primary-600 mb-2">100%</div>
             <div className="text-neutral-600">Satisfaction Rate</div>
           </div>
         </div>

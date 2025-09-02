@@ -72,13 +72,6 @@ const TrustedBy = () => {
     }
   ];
 
-  const certifications = [
-    { name: 'ISO 13485', icon: '✅', description: 'Medical Devices Quality Management' },
-    { name: 'FDA Approved', icon: '🇺🇸', description: 'US Food and Drug Administration' },
-    { name: 'CE Marked', icon: '🇪🇺', description: 'European Conformity' },
-    { name: 'WHO Listed', icon: '🌐', description: 'World Health Organization' }
-  ];
-
   return (
     <section id="trusted-by" className="section-padding bg-neutral-50">
       <div className="max-w-7xl mx-auto">
@@ -119,34 +112,6 @@ const TrustedBy = () => {
               </p>
             </div>
           ))}
-        </div>
-
-        {/* Certifications */}
-        <div className={`mb-20 transition-all duration-1000 delay-400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <h3 className="text-3xl font-bold text-neutral-800 mb-12 text-center">
-            Our Certifications & Approvals
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {certifications.map((cert, index) => (
-              <div
-                key={cert.name}
-                className="bg-gradient-to-br from-primary-50 to-secondary-50 p-8 rounded-2xl border border-primary-100 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2"
-                style={{ transitionDelay: `${index * 200}ms` }}
-              >
-                <div className="text-4xl mb-4 animate-pulse-slow">
-                  {cert.icon}
-                </div>
-                <h4 className="font-bold text-neutral-800 mb-2 text-lg">
-                  {cert.name}
-                </h4>
-                <p className="text-neutral-600 text-sm leading-relaxed">
-                  {cert.description}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

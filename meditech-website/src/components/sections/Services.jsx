@@ -81,7 +81,7 @@ const Services = () => {
       id: 3,
       name: 'ECG Machine',
       description: 'High-precision electrocardiogram equipment for cardiac care',
-      image: '/images/ecg-machine.jpg',
+      image: '/images/ecg-machine.png',
       features: ['12-Lead System', 'Digital Output', 'Portable Design'],
       delay: 200,
       category: 'Cardiac Care',

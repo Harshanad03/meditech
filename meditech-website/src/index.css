@@ -56,3 +56,198 @@
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   }
 }
+
+/* Professional Animations for Hero Component */
+@layer utilities {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes float-delayed {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes float-delayed-2 {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-25px);
+    }
+  }
+  
+  /* Professional Gradient Flow Animation */
+  @keyframes gradient-flow {
+    0%, 100% {
+      background-size: 200% 200%;
+      background-position: 0% 50%;
+    }
+    25% {
+      background-size: 200% 200%;
+      background-position: 100% 50%;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: 100% 50%;
+    }
+    75% {
+      background-size: 200% 200%;
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes gradient-flow-delayed {
+    0%, 100% {
+      background-size: 200% 200%;
+      background-position: 0% 50%;
+    }
+    25% {
+      background-size: 200% 200%;
+      background-position: 100% 50%;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: 100% 50%;
+    }
+    75% {
+      background-size: 200% 200%;
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes gradient-x {
+    0%, 100% {
+      background-size: 200% 200%;
+      background-position: left top;
+    }
+    25% {
+      background-size: 200% 200%;
+      background-position: right top;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: right bottom;
+    }
+    75% {
+      background-size: 200% 200%;
+      background-position: left bottom;
+    }
+  }
+  
+  /* Professional Underline Animation */
+  @keyframes underline-expand {
+    0% {
+      width: 0%;
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  
+  /* Professional Accent Glow Animation */
+  @keyframes accent-glow {
+    0%, 100% {
+      opacity: 0.6;
+      box-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+    }
+    50% {
+      opacity: 1;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.6), 0 0 30px rgba(20, 184, 166, 0.4);
+    }
+  }
+  
+  /* Professional Badge Glow Animation */
+  @keyframes badge-glow {
+    0%, 100% {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 20px rgba(16, 185, 129, 0.1);
+    }
+  }
+  
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float-delayed 8s ease-in-out infinite;
+  }
+  
+  .animate-float-slow {
+    animation: float-slow 10s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed-2 {
+    animation: float-delayed-2 7s ease-in-out infinite;
+  }
+  
+  .animate-gradient-flow {
+    animation: gradient-flow 4s ease-in-out infinite;
+  }
+  
+  .animate-gradient-flow-delayed {
+    animation: gradient-flow-delayed 4s ease-in-out infinite 2s;
+  }
+  
+  .animate-gradient-x {
+    animation: gradient-x 3s ease infinite;
+  }
+  
+  .animate-underline-expand {
+    animation: underline-expand 2s ease-out 1s forwards;
+  }
+  
+  .animate-accent-glow {
+    animation: accent-glow 3s ease-in-out infinite;
+  }
+  
+  .animate-badge-glow {
+    animation: badge-glow 4s ease-in-out infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 3s ease-in-out infinite;
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+  
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+}

@@ -65,15 +65,26 @@ const Hero = () => {
 
               {/* Main Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        {/* Main Heading */}
-        <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <span className="block bg-gradient-to-r from-teal-900 via-cyan-900 to-blue-900 bg-clip-text text-transparent animate-gradient-x hover:scale-105 transition-transform duration-300 cursor-default animate-pulse hover:from-teal-700 hover:via-cyan-800 hover:to-blue-700 transition-all duration-500 hover:drop-shadow-2xl hover:drop-shadow-teal-500/50">
-            Medical Equipment
-          </span>
-          <span className="block text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-teal-900 via-cyan-900 to-blue-900 bg-clip-text text-transparent animate-gradient-x-delayed hover:scale-105 transition-transform duration-300 cursor-default mt-2 animate-pulse hover:from-teal-700 hover:via-cyan-700 hover:to-blue-700 transition-all duration-500 hover:drop-shadow-2xl hover:drop-shadow-blue-500/50">
-            For Sale, Service & Rental
-          </span>
-        </h1>
+        {/* Professional Main Heading with Advanced Animations */}
+        <div className={`mb-8 transform transition-all duration-1200 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`}>
+          <h1 className="font-black leading-tight">
+            {/* First Line - Medical Equipment (Increased Size) */}
+            <span className="block text-3xl sm:text-4xl lg:text-5xl">
+              <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent animate-gradient-flow hover:scale-105 transition-all duration-700 cursor-default">
+                Medical Equipment
+              </span>
+            </span>
+            
+            {/* Second Line - For Sale, Service & Rental (Larger) */}
+            <span className="block text-3xl sm:text-4xl lg:text-6xl mt-4 relative">
+              <span className="bg-gradient-to-r from-teal-600 via-cyan-700 to-teal-800 bg-clip-text text-transparent animate-gradient-x hover:scale-105 transition-all duration-700 cursor-default font-bold">
+                For Sale, Service & Rental
+              </span>
+              {/* Professional accent line */}
+              <div className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-teal-700 via-teal-800 to-cyan-700 rounded-full animate-accent-glow"></div>
+            </span>
+          </h1>
+        </div>
 
         {/* Dynamic Subtitle */}
         <div className={`h-16 mb-8 flex items-center justify-center transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -91,7 +102,7 @@ const Hero = () => {
               { number: "500+", label: "Hospitals Served", icon: "🏥", color: "from-teal-500 to-cyan-600" },
               { number: "250+", label: "Happy Clients", icon: "😊", color: "from-teal-600 to-cyan-700" },
               { number: "15+", label: "Years Experience", icon: "⭐", color: "from-blue-500 to-blue-600" },
-              { number: "99%", label: "Satisfaction Rate", icon: "💯", color: "from-red-500 to-red-600" }
+              { number: "100%", label: "Satisfaction Rate", icon: "💯", color: "from-red-500 to-red-600" }
             ].map((stat, index) => (
               <div key={index} className="text-center group">
                 {/* Stats Circle - Same Style as Background Circle */}

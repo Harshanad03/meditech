@@ -4,10 +4,7 @@ const ContactUs = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
-    company: '',
-    equipment: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,10 +45,7 @@ const ContactUs = () => {
     // Reset form
     setFormData({
       name: '',
-      email: '',
       phone: '',
-      company: '',
-      equipment: '',
       message: ''
     });
     
@@ -63,148 +57,98 @@ const ContactUs = () => {
     {
       icon: '📍',
       title: 'Visit Us',
-      details: ['123 Medical Center Drive', 'Suite 500', 'New York, NY 10001']
+      details: ['161/3, PON NAGAR, MUTHUR MAIN ROAD', 'CHINNIYAM PALAYAM, Erode', 'Tamil Nadu (TN - 33), PIN Code 638104', 'India']
     },
     {
       icon: '📞',
       title: 'Call Us',
-      details: ['+1 (555) 123-4567', '+1 (555) 123-4568', '24/7 Support Available']
+      details: ['94421 32352', '24/7 Support Available']
     },
     {
       icon: '✉️',
       title: 'Email Us',
-      details: ['info@meditechsolution.com', 'sales@meditechsolution.com', 'support@meditechsolution.com']
+      details: ['meditechsolution.in@gmail.com']
     },
     {
-      icon: '🕒',
-      title: 'Business Hours',
-      details: ['Monday - Friday: 8:00 AM - 6:00 PM', 'Saturday: 9:00 AM - 3:00 PM', 'Sunday: Closed']
+      icon: '🏢',
+      title: 'GSTIN',
+      details: ['33AONPK4309K1ZT']
     }
   ];
 
-  const equipmentTypes = [
-    'Ventilator',
-    'Patient Monitor',
-    'ECG Machine',
-    'OT Light',
-    'OT Table',
-    'Diathermy',
-    'Boyles Apparatus',
-    'ICU Cot',
-    'CPAP',
-    'BiPAP',
-    'O2 Concentrator',
-    'Other'
-  ];
+
 
   return (
-    <section id="contact" className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+    <section id="contact" className="section-padding bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-100 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-teal-200/20 to-cyan-300/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-200/20 to-indigo-300/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Enhanced Section Header */}
+        <div className={`text-center mb-12 transition-all duration-1200 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
         }`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-6">
-            Get In Touch
+          <h2 className="text-4xl md:text-6xl font-black text-slate-800 mb-6">
+            <span className="bg-gradient-to-r from-slate-800 via-teal-800 to-cyan-800 bg-clip-text text-transparent animate-gradient-flow">
+              Get In Touch
+            </span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
             Ready to discuss your medical equipment needs? Our team of experts is here to help 
-            you find the perfect solution for your healthcare facility.
+            you find the <span className="text-teal-600 font-semibold">perfect solution</span> for your healthcare facility.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
-          <div className={`transition-all duration-1000 delay-200 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+          {/* Enhanced Contact Form */}
+          <div className={`transition-all duration-1200 delay-200 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'
           }`}>
-            <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-8 border border-primary-100">
-              <h3 className="text-2xl font-bold text-neutral-800 mb-6">
-                Send Us a Message
+            <div className="bg-gradient-to-br from-white to-slate-50 rounded-3xl p-8 shadow-xl border border-slate-200/50 backdrop-blur-sm relative overflow-hidden group">
+              {/* Animated background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 via-cyan-500/5 to-teal-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <h3 className="text-2xl font-black text-slate-800 mb-6 relative z-10">
+                <span className="bg-gradient-to-r from-slate-800 via-teal-800 to-cyan-800 bg-clip-text text-transparent">
+                  Send Us a Message
+                </span>
               </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Enter your email"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">
-                      Company/Hospital
-                    </label>
-                    <input
-                      type="text"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Enter company name"
-                    />
-                  </div>
-                </div>
-
+              <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">
-                    Equipment Interest
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                    Full Name *
                   </label>
-                  <select
-                    name="equipment"
-                    value={formData.equipment}
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                  >
-                    <option value="">Select equipment type</option>
-                    {equipmentTypes.map((type) => (
-                      <option key={type} value={type}>{type}</option>
-                    ))}
-                  </select>
+                    required
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                    placeholder="Enter your full name"
+                  />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">
                     Message *
                   </label>
                   <textarea
@@ -213,7 +157,7 @@ const ContactUs = () => {
                     onChange={handleInputChange}
                     required
                     rows="4"
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 resize-none bg-white/80 backdrop-blur-sm"
                     placeholder="Tell us about your requirements..."
                   />
                 </div>
@@ -221,45 +165,60 @@ const ContactUs = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full btn-primary text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 text-white font-bold rounded-xl text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 hover:shadow-xl relative overflow-hidden group"
                 >
-                  {isSubmitting ? (
-                    <div className="flex items-center justify-center">
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                      Sending Message...
-                    </div>
-                  ) : (
-                    'Send Message'
-                  )}
+                  <span className="relative z-10">
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center">
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                        Sending Message...
+                      </div>
+                    ) : (
+                      'Send Message'
+                    )}
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-700 via-teal-800 to-cyan-800 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </button>
               </form>
             </div>
           </div>
 
-          {/* Contact Information */}
-          <div className={`transition-all duration-1000 delay-400 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+          {/* Enhanced Contact Information */}
+          <div className={`transition-all duration-1200 delay-400 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-16'
           }`}>
             <div className="space-y-8">
               {contactInfo.map((info, index) => (
                 <div
                   key={info.title}
-                  className="flex items-start space-x-4 p-6 bg-neutral-50 rounded-2xl hover:bg-neutral-100 transition-all duration-300"
+                  className="group flex items-start space-x-4 p-6 bg-gradient-to-br from-white to-slate-50 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-200/50 backdrop-blur-sm relative overflow-hidden"
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <div className="text-3xl animate-bounce-slow">
-                    {info.icon}
+                  {/* Animated background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 via-cyan-500/5 to-teal-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                      <span className="text-2xl group-hover:scale-125 transition-transform duration-300">
+                        {info.icon}
+                      </span>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-neutral-800 mb-2">
+                  
+                  <div className="relative z-10 flex-1">
+                    <h4 className="text-lg font-black text-slate-800 mb-3 group-hover:text-teal-700 transition-colors duration-300">
                       {info.title}
                     </h4>
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-neutral-600 text-sm mb-1">
+                      <p key={idx} className="text-slate-600 text-sm mb-1 group-hover:text-slate-700 transition-colors duration-300">
                         {detail}
                       </p>
                     ))}
                   </div>
+                  
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </div>
               ))}
             </div>

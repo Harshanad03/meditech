@@ -21,7 +21,6 @@ const Footer = () => {
       { name: 'Technical Support', href: '#contact' },
       { name: 'Installation Guide', href: '#' },
       { name: 'Maintenance Services', href: '#' },
-      { name: 'Training Programs', href: '#' },
       { name: 'FAQ', href: '#' }
     ],
     legal: [
@@ -62,19 +61,25 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <div className="text-primary-400">📍</div>
                 <span className="text-neutral-300 text-sm">
-                  123 Medical Center Drive, Suite 500, New York, NY 10001
+                  161/3, PON NAGAR, MUTHUR MAIN ROAD, CHINNIYAM PALAYAM, Erode, Tamil Nadu (TN - 33), PIN Code 638104, India
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="text-primary-400">📞</div>
                 <span className="text-neutral-300 text-sm">
-                  +1 (555) 123-4567
+                  +91 94421 32352
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="text-primary-400">✉️</div>
                 <span className="text-neutral-300 text-sm">
-                  info@meditechsolution.com
+                  meditechsolution.in@gmail.com
+                </span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="text-primary-400">🏢</div>
+                <span className="text-neutral-300 text-sm">
+                  GSTIN: 33AONPK4309K1ZT
                 </span>
               </div>
             </div>
@@ -132,60 +137,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="mt-12 pt-8 border-t border-neutral-700">
-          <div className="text-center">
-            <h3 className="text-xl font-semibold text-white mb-4">
-              Stay Updated with Latest Medical Technology
-            </h3>
-            <p className="text-neutral-300 mb-6 max-w-2xl mx-auto">
-              Subscribe to our newsletter for the latest updates on medical equipment, 
-              industry insights, and exclusive offers.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-lg border border-neutral-600 bg-neutral-700 text-white placeholder-neutral-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-              />
-              <button className="btn-primary whitespace-nowrap">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
 
-        {/* Social Links & Legal */}
-        <div className="mt-12 pt-8 border-t border-neutral-700">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  className="w-10 h-10 bg-neutral-700 hover:bg-primary-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
-                  title={social.name}
-                >
-                  <span className="text-lg">{social.icon}</span>
-                </a>
-              ))}
-            </div>
 
-            {/* Legal Links */}
-            <div className="flex flex-wrap justify-center gap-6">
-              {footerLinks.legal.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-neutral-400 hover:text-primary-400 transition-colors duration-300 text-sm"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+
       </div>
 
       {/* Bottom Bar */}
@@ -197,12 +151,8 @@ const Footer = () => {
             </div>
             <div className="flex items-center space-x-6 text-sm text-neutral-400">
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span>ISO 13485 Certified</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                <span>FDA Approved</span>
+                <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
+                <span>Designed and Developed by <a href="mailto:infothillaitech@gmail.com" className="text-teal-400 hover:text-teal-300 transition-colors duration-300 cursor-pointer">ThillaiTech</a></span>
               </div>
             </div>
           </div>
@@ -213,7 +163,7 @@ const Footer = () => {
       <div className="fixed bottom-8 right-8 flex flex-col space-y-4 z-40">
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/1234567890?text=Hi%20Meditech%20Solution,%20I%20need%20information%20about%20medical%20equipment"
+          href="https://wa.me/919442132352?text=Hi%20Meditech%20Solution,%20I%20need%20information%20about%20medical%20equipment"
           target="_blank"
           rel="noopener noreferrer"
           className="w-14 h-14 bg-gradient-to-r from-teal-700 to-cyan-700 hover:from-teal-800 hover:to-cyan-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center animate-bounce-slow group"
@@ -228,7 +178,7 @@ const Footer = () => {
 
         {/* Call Button */}
         <a
-          href="tel:+1234567890"
+          href="tel:+919442132352"
           className="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center animate-float group"
           title="Call Us"
         >

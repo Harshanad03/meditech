@@ -33,15 +33,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="text-2xl font-bold text-white transition-colors duration-300">
-              Meditech
-            </div>
-            <div className="text-2xl font-bold text-white transition-colors duration-300">
-              Solution
-            </div>
-            <div className="w-8 h-0.5 bg-red-400 transform rotate-90"></div>
-            <div className="w-6 h-0.5 bg-red-400"></div>
+          <div className="flex items-center">
+            <img 
+              src="/logo.png" 
+              alt="Meditech Solution" 
+              className="h-16 w-auto transition-all duration-300 hover:scale-105"
+            />
           </div>
 
           {/* Desktop Navigation */}

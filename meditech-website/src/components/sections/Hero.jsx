@@ -36,31 +36,17 @@ const Hero = () => {
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 pt-32">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* All Medical Icons in Translucent Circles */}
-        {/* Top-left Syringe Circle */}
-        <div className="absolute top-20 left-20 w-28 h-28 bg-blue-200/40 rounded-full animate-float flex items-center justify-center shadow-lg">
-          <div className="text-3xl text-blue-600">💉</div>
-        </div>
+        {/* Grid Pattern Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
         
-        {/* Top-right Stethoscope Circle */}
-        <div className="absolute top-32 right-20 w-32 h-32 bg-blue-200/40 rounded-full animate-float-delayed flex items-center justify-center shadow-lg">
-          <div className="text-4xl text-blue-600">🩺</div>
-        </div>
+        {/* Floating Medical Icons without Circles */}
+        {/* Top-left Syringe */}
+        <div className="absolute top-20 left-20 text-9xl text-blue-600 drop-shadow-xl filter brightness-110 animate-float hover:scale-110 hover:-translate-y-2 transition-all duration-500 opacity-40">💉</div>
         
-        {/* Bottom-left Hospital Building Circle */}
-        <div className="absolute bottom-20 left-20 w-28 h-28 bg-blue-200/35 rounded-full animate-float-slow flex items-center justify-center shadow-lg">
-          <div className="text-3xl text-blue-600">🏥</div>
-        </div>
+        {/* Top-right Stethoscope */}
+        <div className="absolute top-32 right-20 text-7xl text-blue-600 drop-shadow-xl filter brightness-110 animate-float-delayed hover:scale-110 hover:-translate-y-2 transition-all duration-500 opacity-20">🩺</div>
         
-        {/* Bottom-right Medical Icons Circle */}
-        <div className="absolute bottom-32 right-32 w-40 h-40 bg-blue-200/35 rounded-full animate-float-delayed-2 flex items-center justify-center shadow-lg">
-          <div className="flex items-center space-x-3">
-            {/* Medical Chart with Red Cross */}
-            <div className="text-3xl text-gray-600">📋</div>
-            {/* Pill Blister Pack */}
-            <div className="text-2xl text-purple-500">💊</div>
-          </div>
-        </div>
+      
       </div>
 
               {/* Main Content */}
@@ -99,27 +85,45 @@ const Hero = () => {
         <div className={`max-w-6xl mx-auto mb-10 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
             {[
-              { number: "500+", label: "Hospitals Served", icon: "🏥", color: "from-teal-500 to-cyan-600" },
+              { number: "50+", label: "Hospitals Served", icon: "🏥", color: "from-teal-500 to-cyan-600" },
               { number: "250+", label: "Happy Clients", icon: "😊", color: "from-teal-600 to-cyan-700" },
               { number: "15+", label: "Years Experience", icon: "⭐", color: "from-blue-500 to-blue-600" },
               { number: "100%", label: "Satisfaction Rate", icon: "💯", color: "from-red-500 to-red-600" }
             ].map((stat, index) => (
               <div key={index} className="text-center group">
-                {/* Stats Circle - Same Style as Background Circle */}
-                <div className="w-36 h-36 bg-blue-200/30 rounded-full animate-float shadow-lg flex flex-col items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                  {/* Icon */}
-                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                    {stat.icon}
-                  </div>
+                {/* Stats Circle - Premium UI Design */}
+                <div className="relative w-36 h-36 rounded-full animate-float group-hover:scale-110 group-hover:-translate-y-3 transition-all duration-500">
+                  {/* Outer Glow Ring */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400/20 via-cyan-400/20 to-blue-400/20 blur-sm group-hover:blur-md transition-all duration-500"></div>
                   
-                  {/* Number */}
-                  <div className={`text-base font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 group-hover:scale-105 transition-transform duration-300`}>
-                    {stat.number}
-                  </div>
-                  
-                  {/* Label */}
-                  <div className="text-gray-700 text-[10px] font-semibold group-hover:text-gray-800 transition-colors duration-300 uppercase tracking-wide text-center px-2">
-                    {stat.label}
+                  {/* Main Circle with Premium Glass Effect */}
+                  <div className="relative w-full h-full bg-gradient-to-br from-white/80 via-blue-50/70 to-cyan-100/60 rounded-full shadow-2xl group-hover:shadow-3xl flex flex-col items-center justify-center border-2 border-white/50 backdrop-blur-md overflow-hidden">
+                    {/* Inner Shine Effect */}
+                    <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/40 to-transparent rounded-t-full"></div>
+                    
+                    {/* Subtle Pattern Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-transparent rounded-full"></div>
+                    
+                    {/* Content Container */}
+                    <div className="relative z-10 flex flex-col items-center justify-center">
+                      {/* Icon with Enhanced Styling */}
+                      <div className="text-4xl mb-2 group-hover:scale-125 transition-transform duration-500 drop-shadow-xl filter brightness-110">
+                        {stat.icon}
+                      </div>
+                      
+                      {/* Number with Premium Typography */}
+                      <div className={`text-lg font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-500 drop-shadow-lg tracking-tight`}>
+                        {stat.number}
+                      </div>
+                      
+                      {/* Label with Enhanced Styling */}
+                      <div className="text-gray-700 text-[9px] font-bold group-hover:text-gray-800 transition-colors duration-500 uppercase tracking-widest text-center px-2 drop-shadow-sm leading-tight">
+                        {stat.label}
+                      </div>
+                    </div>
+                    
+                    {/* Hover Glow Effect */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400/0 via-cyan-400/0 to-blue-400/0 group-hover:from-teal-400/10 group-hover:via-cyan-400/10 group-hover:to-blue-400/10 transition-all duration-500"></div>
                   </div>
                 </div>
               </div>
@@ -151,12 +155,32 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Floating Medical Icons */}
+      {/* Floating Medical Icons with Premium Styling */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-10 text-6xl opacity-30 animate-float-delayed filter drop-shadow-lg">🫁</div>
-        <div className="absolute top-1/3 left-20 text-5xl opacity-30 animate-float-slow filter drop-shadow-lg">💉</div>
-        <div className="absolute bottom-1/3 right-20 text-4xl opacity-30 animate-float filter drop-shadow-lg">🩺</div>
-        <div className="absolute bottom-1/4 left-10 text-5xl opacity-30 animate-float-delayed filter drop-shadow-lg">🏥</div>
+        <div className="absolute top-1/4 right-10 text-8xl opacity-75 animate-float-delayed filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative z-10">👩‍⚕</div>
+          </div>
+        </div>
+        <div className="absolute top-1/3 left-20 text-7xl opacity-75 animate-float-slow filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-teal-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative z-10">🫁</div>
+          </div>
+        </div>
+        <div className="absolute bottom-1/3 right-20 text-9xl opacity-75 animate-float filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative z-10">💉</div>
+          </div>
+        </div>
+        <div className="absolute bottom-1/4 left-10 text-9xl opacity-55 animate-float-delayed filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative z-10">🫀</div>
+          </div>
+        </div>
       </div>
 
       {/* Mouse Follow Effect */}

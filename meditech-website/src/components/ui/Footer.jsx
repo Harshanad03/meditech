@@ -46,10 +46,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="text-2xl font-bold text-primary-400">Meditech</div>
-              <div className="text-2xl font-bold text-primary-400">Solution</div>
-              <div className="w-6 h-0.5 bg-red-500"></div>
+            <div className="flex items-center mb-6">
+              <img 
+                src="/logo.png" 
+                alt="Meditech Solution" 
+                className="h-16 w-auto"
+              />
             </div>
             <p className="text-neutral-300 mb-6 leading-relaxed">
               Leading provider of advanced medical equipment, dedicated to improving healthcare 

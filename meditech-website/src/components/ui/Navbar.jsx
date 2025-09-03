@@ -35,27 +35,29 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center group">
-            <div className="relative">
-              <img 
-                src="/logo.png?v=2" 
-                alt="Meditech Solution" 
-                className="h-16 w-auto transition-all duration-500 hover:scale-110 filter drop-shadow-2xl brightness-110 contrast-125"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }}
-              />
-              {/* Fallback text logo */}
-              <div className="hidden text-white font-bold text-xl">
-                <span className="bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">
-                  Meditech Solution
-                </span>
+            <a href="#home" className="relative block no-underline">
+              <div className="relative">
+                <img 
+                  src="/logo.png?v=2" 
+                  alt="Meditech Solution" 
+                  className="h-16 w-auto transition-all duration-500 hover:scale-110 filter drop-shadow-2xl brightness-110 contrast-125"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'block';
+                  }}
+                />
+                {/* Fallback text logo */}
+                <div className="hidden text-white font-bold text-xl">
+                  <span className="bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">
+                    Meditech Solution
+                  </span>
+                </div>
+                {/* Enhanced glow effect - always visible */}
+                <div className="absolute inset-0 bg-white/30 rounded-lg blur-lg opacity-100 transition-opacity duration-500 -z-10"></div>
+                {/* Additional shadow for better visibility - always visible */}
+                <div className="absolute inset-0 bg-black/20 rounded-lg blur-sm opacity-50 -z-20"></div>
               </div>
-              {/* Enhanced glow effect - always visible */}
-              <div className="absolute inset-0 bg-white/30 rounded-lg blur-lg opacity-100 transition-opacity duration-500 -z-10"></div>
-              {/* Additional shadow for better visibility - always visible */}
-              <div className="absolute inset-0 bg-black/20 rounded-lg blur-sm opacity-50 -z-20"></div>
-            </div>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -84,7 +86,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <button className="group relative font-bold py-3 px-8 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 overflow-hidden bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 shadow-2xl hover:shadow-teal-500/50">
+            <a href="#contact" className="group relative inline-block font-bold py-3 px-8 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 overflow-hidden bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 shadow-2xl hover:shadow-teal-500/50 no-underline">
               {/* Hover gradient */}
               <div className="absolute inset-0 bg-gradient-to-r from-teal-700 via-teal-800 to-cyan-800 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
@@ -101,7 +103,7 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                 </svg>
               </span>
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -151,7 +153,7 @@ const Navbar = () => {
               
               {/* CTA Button */}
               <div className="pt-6">
-                <button className="group relative w-full bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 overflow-hidden shadow-2xl hover:shadow-teal-500/50">
+                <a href="#contact" className="group relative inline-block w-full bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 overflow-hidden shadow-2xl hover:shadow-teal-500/50 no-underline">
                   {/* Hover gradient */}
                   <div className="absolute inset-0 bg-gradient-to-r from-teal-700 via-teal-800 to-cyan-800 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
@@ -167,7 +169,7 @@ const Navbar = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
             </div>
           </div>

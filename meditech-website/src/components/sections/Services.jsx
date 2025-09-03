@@ -342,10 +342,10 @@ const Services = () => {
                 We specialize in custom medical equipment solutions tailored to your specific requirements and facility needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="group/cta bg-white text-teal-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden">
+                <a href="#contact" className="group/cta bg-white text-teal-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden">
                   <span className="relative z-10">Get Custom Quote</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-100 to-transparent -skew-x-12 -translate-x-full group-hover/cta:translate-x-full transition-transform duration-700"></div>
-                </button>
+                </a>
                 <button className="group/cta2 border-2 border-white text-white hover:bg-white hover:text-teal-600 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
                   <span className="relative z-10">Schedule Consultation</span>
                   <div className="absolute inset-0 bg-white opacity-0 group-hover/cta2:opacity-100 transition-opacity duration-300"></div>

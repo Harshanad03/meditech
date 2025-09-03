@@ -33,7 +33,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 pt-32">
+    <section id="home" className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 pt-32">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Grid Pattern Background */}
@@ -74,7 +74,7 @@ const Hero = () => {
 
         {/* Dynamic Subtitle */}
         <div className={`h-16 mb-8 flex items-center justify-center transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <p className="text-xl sm:text-2xl lg:text-2xl text-gray-700 font-medium">
+          <p className="text-xl sm:text-2xl lg:text-2xl text-red-700 font-medium">
             <span className="inline-block min-w-[300px] sm:min-w-[400px] text-center">
               {heroTexts[currentText]}
             </span>
@@ -139,43 +139,43 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 transform transition-all duration-1000 delay-1100 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <button className="group relative px-10 py-5 bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 text-white font-bold rounded-full text-lg shadow-2xl hover:shadow-teal-500/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 overflow-hidden">
+          <a href="#services" className="group relative inline-block px-10 py-5 bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 text-white font-bold rounded-full text-lg shadow-2xl hover:shadow-teal-500/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 overflow-hidden no-underline">
             <span className="relative z-10">Explore Products</span>
             <div className="absolute inset-0 bg-gradient-to-r from-teal-700 via-teal-800 to-cyan-800 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 via-teal-600 to-cyan-600 rounded-full blur opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-          </button>
+          </a>
           
-          <button className="group relative px-10 py-5 bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 text-white font-bold rounded-full text-lg shadow-2xl hover:shadow-teal-500/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 overflow-hidden">
+          <a href="#contact" className="group relative px-10 py-5 bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 text-white font-bold rounded-full text-lg shadow-2xl hover:shadow-teal-500/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 overflow-hidden">
             <span className="relative z-10">Get Quote</span>
             <div className="absolute inset-0 bg-gradient-to-r from-teal-700 via-teal-800 to-cyan-800 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 via-teal-600 to-cyan-600 rounded-full blur opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-          </button>
+          </a>
         </div>
       </div>
 
       {/* Floating Medical Icons with Premium Styling */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-10 text-8xl opacity-75 animate-float-delayed filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
+        <div className="absolute top-1/3 right-10 text-8xl opacity-55 animate-float-delayed filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10">👩‍⚕</div>
           </div>
         </div>
-        <div className="absolute top-1/3 left-20 text-7xl opacity-75 animate-float-slow filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
+        <div className="absolute top-1/3 center-4 text-7xl opacity-55 animate-float-slow filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-teal-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10">🫁</div>
           </div>
         </div>
-        <div className="absolute bottom-1/3 right-20 text-9xl opacity-75 animate-float filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
+        <div className="absolute bottom-1/3 right-20 text-7xl opacity-75 animate-float filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10">💉</div>
           </div>
         </div>
-        <div className="absolute bottom-1/4 left-10 text-9xl opacity-55 animate-float-delayed filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
+        <div className="absolute bottom-1/4 left-10 text-8xl opacity-35 animate-float-delayed filter drop-shadow-2xl hover:opacity-30 transition-all duration-500 hover:scale-110 hover:brightness-125 group">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10">🫀</div>

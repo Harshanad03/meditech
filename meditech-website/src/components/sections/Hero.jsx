@@ -30,7 +30,7 @@ const Hero = () => {
       clearInterval(textInterval);
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, [heroTexts.length]);
 
   return (
     <section id="home" className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 pt-32">

@@ -31,13 +31,6 @@ const Footer = () => {
     ]
   };
 
-  const socialLinks = [
-    { name: 'LinkedIn', icon: '💼', href: '#' },
-    { name: 'Twitter', icon: '🐦', href: '#' },
-    { name: 'Facebook', icon: '📘', href: '#' },
-    { name: 'YouTube', icon: '📺', href: '#' },
-    { name: 'Instagram', icon: '📷', href: '#' }
-  ];
 
   return (
     <footer className="bg-neutral-800 text-white">

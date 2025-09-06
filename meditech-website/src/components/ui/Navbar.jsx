@@ -21,6 +21,17 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleMobileNavClick = (href) => {
+    setIsMobileMenuOpen(false);
+    // Smooth scroll to section
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
@@ -67,6 +78,13 @@ const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 className="relative font-semibold text-white hover:text-cyan-200 transition-all duration-300 px-4 py-2 rounded-lg group overflow-hidden"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector(item.href);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 style={{ transitionDelay: `${index * 50}ms` }}
               >
                 {/* Background glow */}
@@ -86,7 +104,17 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <a href="#contact" className="group relative inline-block font-bold py-3 px-8 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 overflow-hidden bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 shadow-2xl hover:shadow-teal-500/50 no-underline">
+            <a 
+              href="#contact" 
+              className="group relative inline-block font-bold py-3 px-8 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 overflow-hidden bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 shadow-2xl hover:shadow-teal-500/50 no-underline"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.querySelector('#contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               {/* Hover gradient */}
               <div className="absolute inset-0 bg-gradient-to-r from-teal-700 via-teal-800 to-cyan-800 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
@@ -139,21 +167,31 @@ const Navbar = () => {
               {/* Navigation Links */}
               <div className="space-y-2">
                 {navItems.map((item, index) => (
-                                     <a
-                     key={item.name}
-                     href={item.href}
-                     className="group flex items-center justify-center py-4 px-2 transition-all duration-300"
-                     onClick={() => setIsMobileMenuOpen(false)}
-                     style={{ animationDelay: `${index * 100}ms` }}
-                   >
-                     <span className="text-white font-medium text-lg">{item.name}</span>
-                   </a>
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="group flex items-center justify-center py-4 px-2 transition-all duration-300"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMobileNavClick(item.href);
+                    }}
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <span className="text-white font-medium text-lg">{item.name}</span>
+                  </a>
                 ))}
               </div>
               
               {/* CTA Button */}
               <div className="pt-6">
-                <a href="#contact" className="group relative inline-block w-full bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 overflow-hidden shadow-2xl hover:shadow-teal-500/50 no-underline">
+                <a 
+                  href="#contact" 
+                  className="group relative inline-block w-full bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 overflow-hidden shadow-2xl hover:shadow-teal-500/50 no-underline"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleMobileNavClick('#contact');
+                  }}
+                >
                   {/* Hover gradient */}
                   <div className="absolute inset-0 bg-gradient-to-r from-teal-700 via-teal-800 to-cyan-800 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   

@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import reportWebVitals from './reportWebVitals';
 
-// Disable React DevTools message
-if (process.env.REACT_APP_DISABLE_DEVTOOLS === 'true') {
+// Disable all console messages for security and clean output
+(function() {
   // Suppress React DevTools download message
   window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = {
     isDisabled: true,
@@ -14,7 +14,29 @@ if (process.env.REACT_APP_DISABLE_DEVTOOLS === 'true') {
     onCommitFiberRoot: () => {},
     onCommitFiberUnmount: () => {},
   };
-}
+  
+  // Disable all console methods completely
+  const noop = () => {};
+  const methods = [
+    'log', 'warn', 'error', 'info', 'debug', 'trace', 'group', 'groupEnd',
+    'time', 'timeEnd', 'count', 'clear', 'table', 'dir', 'dirxml', 'assert',
+    'groupCollapsed', 'timeLog', 'profile', 'profileEnd', 'timeStamp'
+  ];
+  
+  methods.forEach(method => {
+    if (console[method]) {
+      console[method] = noop;
+    }
+  });
+  
+  // Override console constructor
+  if (window.console) {
+    window.console = new Proxy(console, {
+      get: () => noop,
+      set: () => true
+    });
+  }
+})();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,7 +45,5 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Disable web vitals reporting to prevent console messages
+// reportWebVitals();

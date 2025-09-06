@@ -22,12 +22,39 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Enhanced smooth scrolling for all anchor links
+  useEffect(() => {
+    const handleSmoothScroll = (e) => {
+      const target = e.target.closest('a[href^="#"]');
+      if (target) {
+        e.preventDefault();
+        const targetId = target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    // Add smooth scroll to all anchor links
+    document.addEventListener('click', handleSmoothScroll);
+    
+    return () => {
+      document.removeEventListener('click', handleSmoothScroll);
+    };
+  }, []);
+
   if (isLoading) {
     return <LogoLoader isLoading={isLoading} onComplete={() => setIsLoading(false)} />;
   }
 
   return (
-    <div className="App">
+    <div className="App smooth-scroll scroll-optimized">
       <Navbar />
       <Hero />
       <Services />

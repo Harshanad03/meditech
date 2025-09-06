@@ -23,11 +23,15 @@ const Navbar = () => {
 
   const handleMobileNavClick = (href) => {
     setIsMobileMenuOpen(false);
-    // Smooth scroll to section
+    // Enhanced smooth scroll to section
     setTimeout(() => {
       const element = document.querySelector(href);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        const offsetTop = element.offsetTop - 80; // Account for fixed navbar
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
       }
     }, 100);
   };
@@ -82,7 +86,11 @@ const Navbar = () => {
                   e.preventDefault();
                   const element = document.querySelector(item.href);
                   if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
+                    const offsetTop = element.offsetTop - 80; // Account for fixed navbar
+                    window.scrollTo({
+                      top: offsetTop,
+                      behavior: 'smooth'
+                    });
                   }
                 }}
                 style={{ transitionDelay: `${index * 50}ms` }}
@@ -111,7 +119,11 @@ const Navbar = () => {
                 e.preventDefault();
                 const element = document.querySelector('#contact');
                 if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
+                  const offsetTop = element.offsetTop - 80; // Account for fixed navbar
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                  });
                 }
               }}
             >

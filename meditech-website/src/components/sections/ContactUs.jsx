@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../../config/emailjs';
 
 const ContactUs = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,18 +41,53 @@ const ContactUs = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Reset form
-    setFormData({
-      name: '',
-      phone: '',
-      message: ''
-    });
-    
-    setIsSubmitting(false);
-    alert('Thank you for your message! We will get back to you soon.');
+    try {
+      // Debug: Log the configuration values
+      console.log('EmailJS Config:', {
+        SERVICE_ID: EMAILJS_CONFIG.SERVICE_ID,
+        TEMPLATE_ID: EMAILJS_CONFIG.TEMPLATE_ID,
+        PUBLIC_KEY: EMAILJS_CONFIG.PUBLIC_KEY ? 'Set' : 'Not set',
+        TO_EMAIL: EMAILJS_CONFIG.TO_EMAIL
+      });
+      
+      // Check if EmailJS is properly configured
+      if (!EMAILJS_CONFIG.PUBLIC_KEY || 
+          EMAILJS_CONFIG.PUBLIC_KEY === 'your_public_key_here' ||
+          EMAILJS_CONFIG.PUBLIC_KEY === 'undefined' ||
+          !EMAILJS_CONFIG.SERVICE_ID ||
+          EMAILJS_CONFIG.SERVICE_ID === 'your_service_id_here' ||
+          !EMAILJS_CONFIG.TEMPLATE_ID ||
+          EMAILJS_CONFIG.TEMPLATE_ID === 'your_template_id_here') {
+        throw new Error('EmailJS not configured. Please check your .env file and restart the development server.');
+      }
+      
+      // Initialize EmailJS
+      emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+      
+      // Send email
+      const result = await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, {
+        from_name: formData.name,
+        phone: formData.phone,
+        message: formData.message,
+        to_email: EMAILJS_CONFIG.TO_EMAIL
+      });
+      
+      console.log('Email sent successfully:', result);
+      
+      // Reset form
+      setFormData({
+        name: '',
+        phone: '',
+        message: ''
+      });
+      
+      alert('Thank you for your message! We will get back to you soon.');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Sorry, there was an error sending your message. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -135,13 +172,14 @@ const ContactUs = () => {
 
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">
-                    Phone Number
+                    Phone Number *
                   </label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm"
                     placeholder="Enter your phone number"
                   />

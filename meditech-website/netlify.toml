@@ -1,6 +1,6 @@
 [build]
   # Build command
-  command = "npm run build"
+  command = "npm run build:prod"
   
   # Directory to publish
   publish = "build"

@@ -6,7 +6,7 @@
 
 1. **Build your project:**
    ```bash
-   npm run build
+   npm run build:prod
    ```
 
 2. **Go to Netlify:**
@@ -31,7 +31,7 @@
    - Click "New site from Git"
    - Choose your repository
    - Set build settings:
-     - **Build command:** `npm run build`
+     - **Build command:** `npm run build:prod`
      - **Publish directory:** `build`
 
 ### **Method 3: Netlify CLI**
@@ -95,12 +95,13 @@ meditech-website/
 
 ## 🎯 **Pre-Deployment Checklist**
 
-- [ ] **Build successfully:** `npm run build`
+- [ ] **Build successfully:** `npm run build:prod`
 - [ ] **Test locally:** `npm start`
 - [ ] **Check all images** are loading
 - [ ] **Test contact form** (after adding env vars)
 - [ ] **Verify responsive design**
 - [ ] **Check all links** are working
+- [ ] **Verify no console logs** in production build
 
 ## 🚀 **Post-Deployment**
 

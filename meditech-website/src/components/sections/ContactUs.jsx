@@ -43,13 +43,7 @@ const ContactUs = () => {
     setIsSubmitting(true);
     
     try {
-      // Debug: Check if configuration is loaded (without exposing credentials)
-      console.log('EmailJS Config Status:', {
-        SERVICE_ID: EMAILJS_CONFIG.SERVICE_ID ? 'Set' : 'Not set',
-        TEMPLATE_ID: EMAILJS_CONFIG.TEMPLATE_ID ? 'Set' : 'Not set',
-        PUBLIC_KEY: EMAILJS_CONFIG.PUBLIC_KEY ? 'Set' : 'Not set',
-        TO_EMAIL: EMAILJS_CONFIG.TO_EMAIL ? 'Set' : 'Not set'
-      });
+      // Configuration check (no console logging for security)
       
       // Check if EmailJS is properly configured
       if (!EMAILJS_CONFIG.PUBLIC_KEY || 
@@ -66,14 +60,14 @@ const ContactUs = () => {
       emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
       
       // Send email
-      const result = await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, {
+      await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, {
         from_name: formData.name,
         phone: formData.phone,
         message: formData.message,
         to_email: EMAILJS_CONFIG.TO_EMAIL
       });
       
-      console.log('Email sent successfully:', result);
+      // Email sent successfully (no console logging for security)
       
       // Reset form
       setFormData({
@@ -84,7 +78,7 @@ const ContactUs = () => {
       
       setShowSuccessModal(true);
     } catch (error) {
-      console.error('Error sending email:', error);
+      // Error handling (no console logging for security)
       alert('Sorry, there was an error sending your message. Please try again or contact us directly.');
     } finally {
       setIsSubmitting(false);

@@ -10,6 +10,7 @@ const ContactUs = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,12 +43,12 @@ const ContactUs = () => {
     setIsSubmitting(true);
     
     try {
-      // Debug: Log the configuration values
-      console.log('EmailJS Config:', {
-        SERVICE_ID: EMAILJS_CONFIG.SERVICE_ID,
-        TEMPLATE_ID: EMAILJS_CONFIG.TEMPLATE_ID,
+      // Debug: Check if configuration is loaded (without exposing credentials)
+      console.log('EmailJS Config Status:', {
+        SERVICE_ID: EMAILJS_CONFIG.SERVICE_ID ? 'Set' : 'Not set',
+        TEMPLATE_ID: EMAILJS_CONFIG.TEMPLATE_ID ? 'Set' : 'Not set',
         PUBLIC_KEY: EMAILJS_CONFIG.PUBLIC_KEY ? 'Set' : 'Not set',
-        TO_EMAIL: EMAILJS_CONFIG.TO_EMAIL
+        TO_EMAIL: EMAILJS_CONFIG.TO_EMAIL ? 'Set' : 'Not set'
       });
       
       // Check if EmailJS is properly configured
@@ -81,7 +82,7 @@ const ContactUs = () => {
         message: ''
       });
       
-      alert('Thank you for your message! We will get back to you soon.');
+      setShowSuccessModal(true);
     } catch (error) {
       console.error('Error sending email:', error);
       alert('Sorry, there was an error sending your message. Please try again or contact us directly.');
@@ -263,6 +264,34 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-3xl p-8 max-w-md w-full mx-4 transform transition-all duration-300 scale-100">
+            {/* Success Icon */}
+            <div className="text-center mb-6">
+              <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Thank You!</h3>
+              <p className="text-gray-600">Thank you for your inquiry! We will contact you soon.</p>
+            </div>
+
+            {/* Action Button */}
+            <div className="text-center">
+              <button
+                onClick={() => setShowSuccessModal(false)}
+                className="bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 hover:from-teal-700 hover:via-teal-800 hover:to-cyan-800 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

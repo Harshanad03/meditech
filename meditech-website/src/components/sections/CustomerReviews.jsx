@@ -102,7 +102,7 @@ const CustomerReviews = () => {
         <div className={`text-center mb-16 transition-all duration-1000 delay-200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-3xl p-12 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-3xl p-12 max-w-4xl mx-auto">
             <div className="text-6xl mb-6 animate-float">⭐</div>
             <h3 className="text-3xl font-bold text-neutral-800 mb-4">
               Overall Customer Satisfaction
@@ -121,20 +121,28 @@ const CustomerReviews = () => {
         <div className={`mb-16 transition-all duration-1000 delay-400 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="bg-gradient-to-br from-primary-600 to-primary-700 rounded-3xl p-12 text-white text-center max-w-4xl mx-auto">
-            <div className="text-8xl mb-6 animate-heartbeat">💬</div>
-            <div className="flex justify-center mb-6">
-              {renderStars(reviews[currentReview].rating)}
-            </div>
-            <blockquote className="text-xl italic mb-8 leading-relaxed">
-              "{reviews[currentReview].comment}"
-            </blockquote>
-            <div className="flex items-center justify-center space-x-4">
-              <div className="text-4xl">{reviews[currentReview].image}</div>
-              <div className="text-left">
-                <div className="font-bold text-lg">{reviews[currentReview].name}</div>
-                <div className="text-primary-100">{reviews[currentReview].role}</div>
-                <div className="text-primary-200 text-sm">{reviews[currentReview].hospital}</div>
+          <div className="bg-gradient-to-br from-teal-600 via-teal-700 to-cyan-700 rounded-3xl p-12 text-white text-center max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.1)_25%,rgba(255,255,255,0.1)_50%,transparent_50%,transparent_75%,rgba(255,255,255,0.1)_75%)] bg-[size:20px_20px] opacity-30"></div>
+            
+            {/* Floating Elements */}
+            <div className="absolute top-4 right-4 w-16 h-16 bg-white/10 rounded-full animate-float"></div>
+            <div className="absolute bottom-4 left-4 w-12 h-12 bg-white/10 rounded-full animate-float-delayed"></div>
+            <div className="relative z-10">
+              <div className="text-8xl mb-6 animate-heartbeat">💬</div>
+              <div className="flex justify-center mb-6">
+                {renderStars(reviews[currentReview].rating)}
+              </div>
+              <blockquote className="text-xl italic mb-8 leading-relaxed">
+                "{reviews[currentReview].comment}"
+              </blockquote>
+              <div className="flex items-center justify-center space-x-4">
+                <div className="text-4xl">{reviews[currentReview].image}</div>
+                <div className="text-left">
+                  <div className="font-bold text-lg">{reviews[currentReview].name}</div>
+                  <div className="text-teal-100">{reviews[currentReview].role}</div>
+                  <div className="text-teal-200 text-sm">{reviews[currentReview].hospital}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -149,7 +157,7 @@ const CustomerReviews = () => {
               key={index}
               onClick={() => setCurrentReview(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentReview ? 'bg-primary-600 scale-125' : 'bg-gray-300'
+                index === currentReview ? 'bg-teal-600 scale-125' : 'bg-gray-300'
               }`}
             />
           ))}

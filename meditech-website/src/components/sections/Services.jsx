@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredService, setHoveredService] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const sectionRef = useRef(null);
 

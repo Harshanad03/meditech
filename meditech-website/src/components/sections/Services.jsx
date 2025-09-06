@@ -263,13 +263,13 @@ const Services = () => {
                 {service.icon}
               </div>
 
-              {/* Enhanced Image Container */}
-              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100">
-                <img 
-                  src={service.image} 
-                  alt={service.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+               {/* Enhanced Image Container */}
+               <div className="relative h-64 overflow-hidden bg-white flex items-center justify-center">
+                 <img 
+                   src={service.image} 
+                   alt={service.name}
+                   className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700"
+                 />
                 
                 {/* Multiple Overlay Layers */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

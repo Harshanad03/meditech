@@ -258,10 +258,10 @@ const Services = () => {
               onMouseEnter={() => setHoveredService(service.id)}
               onMouseLeave={() => setHoveredService(null)}
             >
-              {/* Floating Icon */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 z-20">
-                {service.icon}
-              </div>
+                {/* Floating Icon */}
+                <div className="absolute top-2 right-2 w-10 h-10 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform duration-300 z-20">
+                  {service.icon}
+                </div>
 
                {/* Enhanced Image Container */}
                <div className="relative h-64 overflow-hidden bg-white flex items-center justify-center">
@@ -357,10 +357,13 @@ const Services = () => {
                   <span className="relative z-10">Get Custom Quote</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-100 to-transparent -skew-x-12 -translate-x-full group-hover/cta:translate-x-full transition-transform duration-700"></div>
                 </a>
-                <button className="group/cta2 border-2 border-white text-white hover:bg-white hover:text-teal-600 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
-                  <span className="relative z-10">Schedule Consultation</span>
-                  <div className="absolute inset-0 bg-white opacity-0 group-hover/cta2:opacity-100 transition-opacity duration-300"></div>
-                </button>
+                 <button 
+                   onClick={() => window.open('https://wa.me/9442132352?text=Hi%2C%20I%27m%20interested%20in%20scheduling%20a%20consultation%20for%20medical%20equipment%20services.%20Please%20let%20me%20know%20the%20available%20time%20slots.', '_blank')}
+                   className="group/cta2 border-2 border-white text-white hover:bg-white hover:text-teal-600 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden"
+                 >
+                   <span className="relative z-10">Schedule Consultation</span>
+                   <div className="absolute inset-0 bg-white opacity-0 group-hover/cta2:opacity-100 transition-opacity duration-300"></div>
+                 </button>
               </div>
             </div>
           </div>
